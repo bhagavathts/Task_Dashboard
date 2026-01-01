@@ -79,7 +79,7 @@ export default function Register() {
   const [showPassword, setShowPassword] = useState(false);
 
   const submit = async () => {
-    await axios.post("http://localhost:5000/api/auth/register", form);
+    await axios.post("https://task-dashboard-wi7s.onrender.com/api/auth/register", form);
     alert("Registered successfully");
     window.location.href = "/login";
   };

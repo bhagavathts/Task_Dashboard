@@ -137,12 +137,12 @@ export default function Dashboard() {
 
   const loadData = async () => {
     const userRes = await axios.get(
-      "http://localhost:5000/api/user/profile",
+      "https://task-dashboard-wi7s.onrender.com/api/user/profile",
       { headers }
     );
 
     const taskRes = await axios.get(
-      "http://localhost:5000/api/tasks",
+      "https://task-dashboard-wi7s.onrender.com/api/tasks",
       { headers }
     );
 
@@ -158,7 +158,7 @@ export default function Dashboard() {
     if (!title.trim() || !dueDate) return;
 
     await axios.post(
-      "http://localhost:5000/api/tasks",
+      "https://task-dashboard-wi7s.onrender.com/api/tasks",
       { title, dueDate },
       { headers }
     );
@@ -170,7 +170,7 @@ export default function Dashboard() {
 
   const deleteTask = async (id) => {
     await axios.delete(
-      `http://localhost:5000/api/tasks/${id}`,
+      `https://task-dashboard-wi7s.onrender.com/api/tasks/${id}`,
       { headers }
     );
     loadData();
@@ -178,7 +178,7 @@ export default function Dashboard() {
 
   const toggleComplete = async (task) => {
     await axios.put(
-      `http://localhost:5000/api/tasks/${task._id}`,
+      `https://task-dashboard-wi7s.onrender.com/api/tasks/${task._id}`,
       { completed: !task.completed },
       { headers }
     );
@@ -198,7 +198,7 @@ export default function Dashboard() {
     if (!editTask.title.trim() || !editTask.dueDate) return;
 
     await axios.put(
-      `http://localhost:5000/api/tasks/${editTask.id}`,
+      `https://task-dashboard-wi7s.onrender.com/api/tasks/${editTask.id}`,
       {
         title: editTask.title,
         dueDate: editTask.dueDate,

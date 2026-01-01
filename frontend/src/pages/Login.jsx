@@ -29,7 +29,6 @@ import axios from "axios";
 import { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
-/* ================= ELEGANT THEME ================= */
 
 const elegantTheme = createTheme({
   palette: {
@@ -77,7 +76,7 @@ export default function Login() {
 
   const submit = async () => {
     const res = await axios.post(
-      "http://localhost:5000/api/auth/login",
+      "https://task-dashboard-wi7s.onrender.com/api/auth/login",
       form
     );
     login(res.data.token);
