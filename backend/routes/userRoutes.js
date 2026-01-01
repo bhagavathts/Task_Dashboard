@@ -5,7 +5,6 @@ const User = require("../models/User");
 const router = express.Router();
 const JWT_SECRET = "mysecretkey";
 
-// Auth middleware (inline)
 const auth = (req, res, next) => {
   const token = req.headers.authorization;
   if (!token) return res.sendStatus(401);
@@ -19,7 +18,6 @@ const auth = (req, res, next) => {
   }
 };
 
-// Profile
 router.get("/profile", auth, async (req, res) => {
   const user = await User.findById(req.userId).select("-password");
   res.json(user);

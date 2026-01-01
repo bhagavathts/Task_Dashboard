@@ -5,7 +5,6 @@ const Task = require("../models/Task");
 const router = express.Router();
 const JWT_SECRET = "mysecretkey";
 
-/* ================= AUTH MIDDLEWARE ================= */
 
 const auth = (req, res, next) => {
   const token = req.headers.authorization;
@@ -20,8 +19,6 @@ const auth = (req, res, next) => {
   }
 };
 
-/* ================= CREATE TASK ================= */
-// supports title + dueDate
 router.post("/", auth, async (req, res) => {
   const { title, dueDate } = req.body;
 
@@ -36,20 +33,17 @@ router.post("/", auth, async (req, res) => {
   res.json(task);
 });
 
-/* ================= GET TASKS ================= */
 
 router.get("/", auth, async (req, res) => {
   const tasks = await Task.find({ userId: req.userId });
   res.json(tasks);
 });
 
-/* ================= UPDATE TASK ================= */
-// edit title, dueDate, completed
 router.put("/:id", auth, async (req, res) => {
   const { title, dueDate, completed } = req.body;
 
   const updatedTask = await Task.findOneAndUpdate(
-    { _id: req.params.id, userId: req.userId }, // user safety
+    { _id: req.params.id, userId: req.userId }, 
     { title, dueDate, completed },
     { new: true }
   );
@@ -61,7 +55,6 @@ router.put("/:id", auth, async (req, res) => {
   res.json(updatedTask);
 });
 
-/* ================= DELETE TASK ================= */
 
 router.delete("/:id", auth, async (req, res) => {
   const deleted = await Task.findOneAndDelete({
