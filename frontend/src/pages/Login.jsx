@@ -103,7 +103,6 @@ export default function Login() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          // Subtle gradient orbs
           "&::before": {
             content: '""',
             position: "absolute",
@@ -163,7 +162,6 @@ export default function Login() {
               <CardContent>
                 <Fade in timeout={800}>
                   <Box textAlign="center" mb={5}>
-                    {/* Minimalist icon */}
                     <Box
                       sx={{
                         display: "inline-flex",
@@ -389,7 +387,6 @@ export default function Login() {
                       Sign In
                     </Button>
 
-                    {/* Register Link */}
                     <Box textAlign="center" mt={4}>
                       <Typography
                         variant="body2"

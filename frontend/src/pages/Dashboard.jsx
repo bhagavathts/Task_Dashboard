@@ -26,7 +26,6 @@ import { useEffect, useState, useContext } from "react";
 import Navbar from "../components/Navbar";
 import { AuthContext } from "../context/AuthContext";
 
-// Dark Theme Configuration
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
@@ -211,7 +210,6 @@ export default function Dashboard() {
     loadData();
   };
 
-  /* ================= CORRECT TASK LOGIC ================= */
 
   const normalizeDate = (date) => {
     const d = new Date(date);
@@ -248,7 +246,6 @@ export default function Dashboard() {
         <Navbar />
 
         <Container maxWidth="lg" sx={{ pt: 4, pb: 8 }}>
-          {/* Header */}
           <Fade in timeout={800}>
             <Box mb={5} textAlign="center">
               <Typography 
@@ -269,7 +266,6 @@ export default function Dashboard() {
             </Box>
           </Fade>
 
-          {/* Add Task Card */}
           <Grow in timeout={1000}>
             <Card 
               sx={{ 
@@ -328,7 +324,6 @@ export default function Dashboard() {
 
           <Divider sx={{ mb: 5, borderColor: 'rgba(255, 255, 255, 0.05)' }} />
 
-          {/* Task Sections */}
           <TaskSection 
             title="Overdue Tasks" 
             tasks={overdueTasks} 
@@ -374,7 +369,6 @@ export default function Dashboard() {
           />
         </Container>
 
-        {/* EDIT DIALOG */}
         <Dialog 
           open={openEdit} 
           onClose={() => setOpenEdit(false)}
@@ -441,7 +435,6 @@ export default function Dashboard() {
   );
 }
 
-/* ================= REUSABLE TASK SECTION ================= */
 
 function TaskSection({ title, tasks, icon, color, openEditDialog, deleteTask, toggleComplete, animationDelay }) {
   if (tasks.length === 0) return null;
@@ -483,7 +476,6 @@ function TaskSection({ title, tasks, icon, color, openEditDialog, deleteTask, to
   );
 }
 
-/* ================= TASK CARD ================= */
 
 function TaskCard({ task, onEdit, onDelete, onToggle, delay = 0, sectionColor = 'primary' }) {
   const getGradient = () => {

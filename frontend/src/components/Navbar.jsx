@@ -65,7 +65,6 @@ export default function Navbar() {
           alignItems: 'center',
         }}
       >
-        {/* Left: Title */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
           <Box
             sx={{
@@ -130,7 +129,6 @@ export default function Navbar() {
           </Typography>
         </Box>
 
-        {/* Right: Logout Button */}
         <Button
           onClick={logout}
           startIcon={<LogoutRounded />}

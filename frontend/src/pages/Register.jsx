@@ -29,7 +29,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 
-/* ================= ELEGANT THEME ================= */
 
 const elegantTheme = createTheme({
   palette: {
@@ -104,7 +103,6 @@ export default function Register() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          // Subtle gradient orbs
           "&::before": {
             content: '""',
             position: "absolute",
@@ -164,7 +162,6 @@ export default function Register() {
               <CardContent>
                 <Fade in timeout={800}>
                   <Box textAlign="center" mb={5}>
-                    {/* Minimalist icon */}
                     <Box
                       sx={{
                         display: "inline-flex",
@@ -437,7 +434,6 @@ export default function Register() {
                       Create Account
                     </Button>
 
-                    {/* Login Link */}
                     <Box textAlign="center" mt={4}>
                       <Typography
                         variant="body2"
